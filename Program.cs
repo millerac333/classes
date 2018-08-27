@@ -7,13 +7,14 @@
 using System;
 using System.Collections.Generic;
 
-namespace classes
+namespace Classes
 {
     class Program
     {
         static void Main(string[] args)
         {
             // Create an instance of a company. Name it whatever you like.
+            Company SmellsFunny = new Company("My Name", new DateTime(2018, 08, 27));
 
             // Create three employees
 
@@ -25,3 +26,4 @@ namespace classes
             */
         }
     }
+}
