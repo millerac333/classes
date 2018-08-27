@@ -1,21 +1,20 @@
+// Create a custom type for Company. A company has the following properties.
+// Date founded (DateTime)
+// Company name (string)
+// Employees (List<Employee>)
 using System;
+using System.Collections.Generic;
 
-namespace classes
+// namespace classes
+// {
+public class Company
 {
-    public class Company
-    {
 
-        // Some readonly properties (let's talk about gets, baby)
-        public string Name { get; }
-        public DateTime CreatedOn { get; }
+    // Some readonly properties (let's talk about gets, baby)
+    public string Name { get; set }
+    public DateTime CreatedOn { get; set }
+    public List CurrentEmployees { get; set }
 
-        // Create a public property for holding a list of current employees
-
-        /*
-            Create a constructor method that accepts two arguments:
-                1. The name of the company
-                2. The date it was created
-
-            The constructor will set the value of the public properties
-        */
-    }
+    // Create a public property for holding a list of current employees
+    public HashSet<string> EmployeeList = new HashSet<string>();
+}
