@@ -9,16 +9,30 @@ namespace Classes
 {
     public class Company
     {
-        public string Name { get; }
-        public DateTime CreatedOn { get; }
+        public string name { get; }
+        public DateTime createdOn { get; }
 
         // Create a public property for holding a list of current employees
-        public HashSet<string> EmployeeList = new HashSet<string>();
+        public HashSet<Employee> EmployeeList = new HashSet<Employee>();
 
-        public Company(string NameOfComapany, DateTime creationDate)
+        public Company(string NameOfComapany, DateTime CreationDate)
         {
-            Name = NameOfComapany;
-            CreatedOn = creationDate;
+            name = NameOfComapany;
+            createdOn = CreationDate;
         }
+        public void NewHire(Employee applicant)
+        {
+            EmployeeList.Add(applicant);
+        }
+
+        public void DisplayEmployees()
+        {
+            foreach (Employee representative in EmployeeList)
+            {
+                Console.WriteLine($"{representative.firstName} {representative.lastName} works for {name} as {representative.title} since {representative.startDate} ");
+            }
+        }
+
     }
+
 }
